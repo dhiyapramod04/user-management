@@ -1,0 +1,403 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #17294b;
+  background:
+    radial-gradient(ellipse at top left, #dedcff 0%, transparent 38%),
+    radial-gradient(ellipse at bottom right, #d8eaff 0%, transparent 38%),
+    #f5f7ff;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 45px 6%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.brand-icon {
+  font-size: 65px;
+  color: #7758f5;
+  line-height: 1.2;
+}
+
+.header h1 {
+  margin: 12px 0;
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #6356ed;
+}
+
+.header h1 span {
+  color: #17294b;
+}
+
+.header > p {
+  margin: 0;
+  color: #7183a8;
+  font-size: 17px;
+}
+
+.accent-line {
+  width: 65px;
+  height: 5px;
+  border-radius: 10px;
+  margin: 22px auto 0;
+  background: linear-gradient(90deg, #6655f5, #dc75e9);
+}
+
+.calculator {
+  max-width: 1120px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(87, 91, 170, 0.12);
+}
+
+.input-panel,
+.result-panel {
+  padding: 28px;
+  min-width: 0;
+}
+
+.result-panel {
+  background: linear-gradient(145deg, #f0efff, #edf7ff);
+  border-radius: 20px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.heading-icon {
+  color: #6655f5;
+  font-size: 38px;
+}
+
+.section-heading h2 {
+  font-size: 23px;
+  margin: 0;
+}
+
+.description {
+  color: #7183a8;
+  line-height: 1.8;
+  margin: 20px 0 30px;
+}
+
+.field {
+  margin-bottom: 25px;
+}
+
+.field label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 11px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #d5dcf8;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrap:focus-within {
+  border-color: #7562f5;
+  box-shadow: 0 0 0 4px rgba(117, 98, 245, 0.1);
+}
+
+.input-wrap input {
+  min-width: 0;
+  width: 100%;
+  padding: 17px 15px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #17294b;
+}
+
+.input-wrap input::placeholder {
+  color: #a0aec9;
+}
+
+.input-wrap > span {
+  padding: 17px;
+  background: #f1f3ff;
+  color: #65789c;
+  font-weight: 600;
+}
+
+.calculate-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(110deg, #6655f5, #8d51ec);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(102, 85, 245, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(102, 85, 245, 0.3);
+}
+
+.reset-btn {
+  display: block;
+  margin: 14px auto 0;
+  padding: 9px 15px;
+  border: none;
+  background: transparent;
+  color: #7562df;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.error {
+  color: #d63848;
+  font-size: 14px;
+  margin: -8px 0 16px;
+}
+
+.bmi-circle {
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  margin: 28px auto;
+  padding: 9px;
+  background: conic-gradient(
+    #21c7b1,
+    #42a8ed,
+    #705cf5,
+    #21c7b1
+  );
+  display: grid;
+  place-items: center;
+}
+
+.circle-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.bmi-label {
+  color: #7183a8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.circle-content strong {
+  font-size: 38px;
+  color: #17294b;
+}
+
+.category {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 13px;
+  border-radius: 30px;
+  background: #edf0f8;
+  color: #657089;
+}
+
+.category.underweight {
+  color: #2675d9;
+  background: #e4f0ff;
+}
+
+.category.normal-weight {
+  color: #07986b;
+  background: #dcf9e9;
+}
+
+.category.overweight {
+  color: #b87500;
+  background: #fff1d6;
+}
+
+.category.obese {
+  color: #db4653;
+  background: #ffe5e8;
+}
+
+.result-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #e2f8ed;
+  color: #197b60;
+  line-height: 1.6;
+}
+
+.result-message > span {
+  font-size: 24px;
+}
+
+.result-message p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.legend-title {
+  margin: 25px 0 13px;
+  font-size: 17px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border-radius: 11px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.legend-item strong {
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.under {
+  background: #e8f2ff;
+}
+
+.under .dot {
+  background: #3985ff;
+}
+
+.normal {
+  background: #e1f8ee;
+}
+
+.normal .dot {
+  background: #10b981;
+}
+
+.over {
+  background: #fff3df;
+}
+
+.over .dot {
+  background: #f5a623;
+}
+
+.obese {
+  background: #ffe9eb;
+}
+
+.obese .dot {
+  background: #f05260;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 35px;
+  color: #8493b2;
+}
+
+.footer > span {
+  font-size: 27px;
+  color: #7758f5;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.footer small {
+  font-size: 11px;
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 30px 16px;
+  }
+
+  .calculator {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .input-panel,
+  .result-panel {
+    padding: 22px 16px;
+  }
+
+  .section-heading h2 {
+    font-size: 20px;
+  }
+
+  .bmi-circle {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 380px) {
+  .legend-item {
+    gap: 6px;
+    padding: 11px 8px;
+    font-size: 11px;
+  }
+
+  .legend-item strong {
+    font-size: 10px;
+  }
+}
